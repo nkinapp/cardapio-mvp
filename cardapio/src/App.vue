@@ -87,7 +87,7 @@ export default {
       copied: false,
       cart: [],
       menuItems: [
-        { id: 1, nome: "Humildão", descricao:"Pão, Carne 160g, Queijo e Maionese" ,preco: 25.00, imagem: '../src/assets/humildao.png' },
+        { id: 1, nome: "Humildão", descricao:"Pão, Carne 160g, Queijo e Maionese" ,preco: 25.00, imagem: '/assets/humildao.png' },
         { id: 2, nome: "Sou Fit", descricao:"Pão, Carne 160g, Queijo, Alface, Tomate, Picles e Maionese" ,preco: 12.00, imagem: '../src/assets/soufit.png' },
         { id: 3, nome: "Peppa", descricao:"Pão, Carne 160g, Queijo, Bacon e Maionese" , preco: 7.00, imagem: '../src/assets/peppa.png' },
         { id: 4, nome: "Chimichurri", descricao:"Pão, Carne 220g, Queijo, Molho Chimichurri" ,preco: 18.00, imagem: '../src/assets/chimi.png' },
