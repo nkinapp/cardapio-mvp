@@ -1,10 +1,11 @@
 <template>
-  <div class="container-fluid my-5">
-    <h1 class="text-center mb-5 fw-bold text-light">Butcher</h1>
-    
+  <div class="container-fluid my-4">
+    <div class="row justify-content-center">
+      <img src="../src/assets/logo-butcher.svg" height="80px" class="text-center mb-5 align-itens-center d-flex" alt="Logo Butcger" />
+    </div>
     <div class="row">
       <div class="col-lg-12 mb-4">
-        <h3 class="text-light mb-5">Escolha seus Produtos</h3>
+        <h3 class="text-light mb-4">Escolha seus Produtos</h3>
         <div class="row">
           <div class="col-6 col-lg-3 mb-3" v-for="item in menuItems" :key="item.id">
             <div class="card shadow-sm h-100">
@@ -23,10 +24,9 @@
       </div>
 
       <div class="col-lg-12">
+        <h3 class="text-light mb-4 mt-4">Seu pedido</h3>
         <div class="sticky-top" style="top: 20px;">
           <div class="card p-4 shadow-sm border-0">
-            <h5>Seu Pedido</h5>
-
             <ul class="list-group list-group-flush mb-3" v-if="cart.length > 0">
               <li class="list-group-item d-flex justify-content-between align-items-center py-2"
                   v-for="item in cart" :key="item.id">
@@ -68,7 +68,7 @@
               <i class="bi bi-whatsapp"></i> Enviar Pedido e Comprovante
             </a>
             
-            <p class="mt-2 small text-center text-muted"><strong>INSTRUÇÃO:</strong> Por favor, envie seu comprovante Pix junto com este pedido.</p>
+            <p class="mt-3 small text-center text-muted"><strong>INSTRUÇÃO:</strong> Por favor, envie seu comprovante Pix junto com este pedido.</p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default {
     whatsappMessage() {
       if (this.cart.length === 0) return '';
       
-      let message = "--- Reserva de Burger ---\n\n*";
+      let message = "--- Reserva de Burger ---\n\n";
       
       // Lista de Itens
       this.cart.forEach(item => {
@@ -117,8 +117,7 @@ export default {
 
       // Total e Instruções Pix
       message += `\nVALOR FINAL: R$ ${this.totalValue.toFixed(2).replace('.', ',')}\n`;
-      message += "✅ *INSTRUÇÃO*: Por favor, envie seu comprovante Pix junto com este pedido, e informe seu nome e endereço completo para entrega.";
-
+      
       return encodeURIComponent(message);
     },
     
@@ -173,6 +172,18 @@ export default {
   color: #245510 !important;
   font-weight: 500 !important;
 }
+.btn-primary:hover, .btn-success:hover {
+  background-color: #4aad21 !important;
+  border: 1px solid #4aad21 !important;
+}
+.btn-secondary {
+  background-color: #235a0c !important;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #163e06 !important;
+  color: #fff;
+}
 .card-title{
   font-weight: 700;
   color: #202020 !important;
@@ -187,5 +198,9 @@ export default {
   font-weight: 700;
   color: #202020;
   margin-top: auto;
+}
+.alert-success {
+  background-color: #cbfec2 !important;
+  color: #163e06 !important;
 }
 </style>
