@@ -2,11 +2,13 @@
   <div class="container-fluid my-4">
     <div class="row justify-content-center">
       <img src="../src/assets/logo-butcher.svg" height="80px" class="text-center mb-5 align-itens-center d-flex" alt="Logo Butcger" />
+      
     </div>
     <div class="row">
       <div class="col-lg-12 mb-4">
-        <h3 class="text-light mb-4">Escolha seus Produtos</h3>
-        <div class="row">
+        <h3 class="text-light mb-0">Escolha seus Produtos</h3>
+        <small class="text-light mb-4">Pedido para retirada no dia 29/11/2025, a partir das 18h.</small>
+        <div class="row mt-4">
           <div class="col-6 col-lg-3 mb-3" v-for="item in menuItems" :key="item.id">
             <div class="card shadow-sm h-100">
               <img :src="item.imagem" class="card-img-top" alt="Imagem do Burger" style="height: 180px; object-fit: cover;">
@@ -31,7 +33,7 @@
               <li class="list-group-item d-flex justify-content-between align-items-center py-2"
                   v-for="item in cart" :key="item.id">
                 
-                <span>{{ item.nome }} x{{ item.quantidade }}</span>
+                <span>{{ item.nome }} x {{ item.quantidade }}</span>
                 
                 <div class="btn-group btn-group-sm" role="group">
                   <button @click="changeQuantity(item.id, -1)" class="btn btn-outline-danger px-3">-</button>
@@ -80,23 +82,23 @@
 export default {
   data() {
     return {
-      // ⚠️ Substitua pelos seus dados reais!
-      whatsappNumber: '5511999999999', // Seu número (55 + DDD + Número)
-      staticPixKey: '12345678900@exemplo.com.br', // SUA CHAVE PIX REAL AQUI
+      
+      whatsappNumber: '5541998089194',
+      staticPixKey: '4a2ebed0-2988-40b4-888d-93b623cb3e25', 
       
       copied: false,
       cart: [],
       menuItems: [
-        { id: 1, nome: "Humildão", descricao:"Pão, Carne 160g, Queijo e Maionese" ,preco: 25.00, imagem: '/img/humildao.png' },
-        { id: 2, nome: "Sou Fit", descricao:"Pão, Carne 160g, Queijo, Alface, Tomate, Picles e Maionese" ,preco: 12.00, imagem: '/img/soufit.png' },
-        { id: 3, nome: "Peppa", descricao:"Pão, Carne 160g, Queijo, Bacon e Maionese" , preco: 7.00, imagem: '/img/peppa.png' },
-        { id: 4, nome: "Chimichurri", descricao:"Pão, Carne 220g, Queijo, Molho Chimichurri" ,preco: 18.00, imagem: '/img/chimi.png' },
-        { id: 5, nome: "Coca-cola Lata", preco: 18.00, imagem: '/img/coca.png' },
-        { id: 6, nome: "Coca-cola s/açucar Lata", preco: 18.00, imagem: '/img/coca-sacucar.png' },
-        { id: 7, nome: "Chopp Pilsen 1L", preco: 18.00, imagem: '/img/chopp.png' },
-        { id: 8, nome: "Chopp IPA 1L", preco: 18.00, imagem: '/img/chopp.png' },
-        { id: 9, nome: "Água c/ gás", preco: 18.00, imagem: '/img/agua-gas.png' },
-        { id: 10, nome: "Água s/ gás", preco: 18.00, imagem: '/img/agua.png' },
+        { id: 1, nome: "Humildão", descricao:"Pão, Carne 160g, Queijo e Maionese" ,preco: 27.90, imagem: '/img/humildao.png' },
+        { id: 2, nome: "Sou Fit", descricao:"Pão, Carne 160g, Queijo, Alface, Tomate, Picles e Maionese" ,preco: 29.90, imagem: '/img/soufit.png' },
+        { id: 3, nome: "Peppa", descricao:"Pão, Carne 160g, Queijo, Bacon e Maionese" , preco: 31.90, imagem: '/img/peppa.png' },
+        { id: 4, nome: "Chimichurri", descricao:"Pão, Carne 220g, Queijo, Molho Chimichurri" ,preco: 34.90, imagem: '/img/chimi.png' },
+        { id: 5, nome: "Coca-cola Lata", preco: 7.00, imagem: '/img/coca.png' },
+        { id: 6, nome: "Coca-cola s/açucar Lata", preco: 7.00, imagem: '/img/coca-sacucar.png' },
+        { id: 7, nome: "Chopp Pilsen 1L", preco: 26.00, imagem: '/img/chopp.png' },
+        { id: 8, nome: "Chopp IPA 1L", preco: 36.00, imagem: '/img/chopp.png' },
+        { id: 9, nome: "Água c/ gás", preco: 4.00, imagem: '/img/agua-gas.png' },
+        { id: 10, nome: "Água s/ gás", preco: 4.00, imagem: '/img/agua.png' },
       ],
     };
   },
